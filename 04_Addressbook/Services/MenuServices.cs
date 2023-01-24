@@ -10,20 +10,26 @@ namespace _04_Addressbook.Services;
 
 internal class MenuServices
 {
-    private List<IContact> registry = new List<IContact>();  //privata listor
+    private List<Contact> registry = new List<Contact>();  //privata listor
 
     private FileService file = new FileService();
     public string FilePath { get; set; } = null!;
 
     public void OptionsMenu()
     {
+        try 
+        {
+            registry = JsonConvert.DeserializeObject<List<Contact>>(file.Read(FilePath))!;  //Reads answer and saves in program
+        }
+        catch { }
+
         Console.WriteLine("Welcome to the adressbook!");
         Console.WriteLine("1. Add a new contact.");
         Console.WriteLine("2. Show contact.");
         Console.WriteLine("3. Show all contacts.");
         Console.WriteLine("4. Remove contact.");
         Console.WriteLine("Please Enter one of the options above: ");
-        var option = Console.ReadLine();                                //Sparar svaret
+        var option = Console.ReadLine();                                //Saves the answer
 
 
 
@@ -45,7 +51,7 @@ internal class MenuServices
         Console.Clear();
         Console.WriteLine("Please enter contact information");
 
-        IContact adressbook = new Contact();
+        Contact adressbook = new Contact();
         Console.Write("Please enter Firstname: ");
         adressbook.FirstName = Console.ReadLine() ?? "";
         Console.Write("Please enter Lastname: ");
@@ -64,17 +70,17 @@ internal class MenuServices
 
         registry.Add(adressbook);
 
-        file.Save(FilePath, JsonConvert.SerializeObject(new { registry }));  // sparar en fil på skrivbordet 
+        file.Save(FilePath, JsonConvert.SerializeObject(registry));  // Saves the answer on the desktop in a Json file.
     }
 
    
 
-    private void OptionTwo() // Search/find by firstname = find a contact
+    private void OptionTwo() // Search/find by firstname = find a specific contact
     {
         
          Console.WriteLine("Enter the firstname of the person you would like to find.");
          string firstName = Console.ReadLine() ?? "";
-         IContact adressbook = registry.FirstOrDefault(x => x.FirstName.ToLower() == firstName.ToLower())!;
+         Contact adressbook = registry.FirstOrDefault(x => x.FirstName.ToLower() == firstName.ToLower())!;
 
         if (adressbook == null)
         {
@@ -96,7 +102,7 @@ internal class MenuServices
 
 
     
-    private void OptionThree()  //show all contacts
+    private void OptionThree()  //Show all contacts
     {
         if (registry.Count == 0)
         {
@@ -122,7 +128,7 @@ internal class MenuServices
     {
         Console.WriteLine("Enter the firstname of the person you would like to remove.");
         string firstName = Console.ReadLine() ?? "";
-        IContact adressbook = registry.FirstOrDefault(x => x.FirstName.ToLower() == firstName.ToLower())!;
+        Contact adressbook = registry.FirstOrDefault(x => x.FirstName.ToLower() == firstName.ToLower())!;
 
         if (adressbook == null)
         {
@@ -138,7 +144,8 @@ internal class MenuServices
        
         if (Console.ReadKey().Key == ConsoleKey.Y)
         {
-            registry.Remove(adressbook);
+            registry.Remove((Contact)adressbook); 
+            file.Save(FilePath, JsonConvert.SerializeObject(registry));
             Console.WriteLine("\nContact removed. Press any key to continue.");
             Console.ReadKey();
         }
