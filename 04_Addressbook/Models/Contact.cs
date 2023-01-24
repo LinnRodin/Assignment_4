@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace _04_Addressbook.Models;               
                                                   //Här kunde vi lagt interfacet istället om vi vill hålla nere på filer. 
-internal class Contact : IContact
+public class Contact : IContact
 {
 
     public Guid Id { get; set; } = Guid.NewGuid();
