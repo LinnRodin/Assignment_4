@@ -1,0 +1,60 @@
+﻿<Window Background="#B8D1E5" BorderBrush="Blue" x:Class="_05_ContactBook.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:controls="clr-namespace:_05_ContactBook.Controls"
+        xmlns:local="clr-namespace:_05_ContactBook"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="ContactBook" Height="500" Width="850">
+    <Grid Margin="30 30 30 30" Background="#B8D1E5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="auto"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+        <ListBox Grid.Column="0" x:Name="" SelectionMode="Single" SelectionChanged="" BorderThickness="0">
+            
+        </ListBox>
+        <ListBox Grid.Row="1" Height="50" x:Name="lbox_NavMenu" SelectionMode="Single" SelectionChanged="lbox_NavMenu_SelectionChanged" BorderThickness="0">
+            <controls:NavButton />
+        </ListBox>
+        <Frame Grid.Column="1" x:Name="frame_PageFrame" NavigationUIVisibility="Hidden" />
+        <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <TextBlock Grid.Row="0" Text="Firstname:" Margin="10 1 200 35"/>
+            <TextBox x:Name="tb_FirstName" Grid.Row="0" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Firstname}"/>
+            <TextBlock Grid.Row="1" Text="Lastname:" Margin="10 1 200 35" />
+            <TextBox x:Name="tb_LastName" Grid.Row="1" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Lastname}"/>
+            <TextBlock Grid.Row="2" Text="Phone:" Margin="10 1 200 35"/>
+            <TextBox x:Name="tb_Phone" Grid.Row="2" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Phone}"/>
+            <TextBlock Grid.Row="3" Text="Email:" Margin="10 1 200 35"/>
+            <TextBox x:Name="tb_Email" Grid.Row="3" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Email}"/>
+            <TextBlock Grid.Row="4" Text="Streetname:" Margin="10 1 200 35" />
+            <TextBox x:Name="tb_StreetName" Grid.Row="4" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Streetname}"/>
+            <TextBlock Grid.Row="5" Text="Postalcode:" Margin="10 1 200 35" />
+            <TextBox x:Name="tb_PostalCode" Grid.Row="5" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Postalcode}"/>
+            <TextBlock Grid.Row="6" Text="City:" Margin="10 1 200 35"/>
+            <TextBox x:Name="tb_City" Grid.Row="6" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.City}"/>
+            <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center">
+                <Button Content="Edit" Click="btn_EditContact_Click" Margin="3" Padding="4"/>
+                <Button Content="Add" Click="btn_AddContact_Click" Margin="3" Padding="4" />
+                <Button Content="Remove" Click="btn_RemoveContact_Click" Margin="3" Padding="4"/>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>
