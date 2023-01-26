@@ -3,17 +3,8 @@
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
-    <RootNamespace>_05_ContactBook</RootNamespace>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Folder Include="Pages\" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
-  </ItemGroup>
 
 </Project>

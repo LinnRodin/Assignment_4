@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace _05_ContactBook
+namespace ContactBook
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -13,19 +13,19 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace _05_ContactBook.Controls
+namespace ContactBook.Controls
 {
-    
+   
     public class NavButton : Control
     {
-        static NavButton()                  //ctor constructor
+        static NavButton()
         {
             DefaultStyleKeyProperty.OverrideMetadata(typeof(NavButton), new FrameworkPropertyMetadata(typeof(NavButton)));
         }
 
 
 
-        public Uri NavLink                  //NavLink property som har att göra med NavButton att göra för att kunna klicka och navigera till en ny page via Uri. 
+        public Uri NavLink
         {
             get { return (Uri)GetValue(NavLinkProperty); }
             set { SetValue(NavLinkProperty, value); }
@@ -35,7 +35,7 @@ namespace _05_ContactBook.Controls
 
 
 
-        public Geometry Icon                // Property del för Icon
+        public Geometry Icon
         {
             get { return (Geometry)GetValue(IconProperty); }
             set { SetValue(IconProperty, value); }
