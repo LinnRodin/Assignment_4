@@ -45,6 +45,21 @@ namespace ContactBook.Services
             SaveToFile();
         }
 
+        public void ContactToEdit(Contact content)
+        {
+            var contactToEdit = contacts.FirstOrDefault(c => c.FirstName == content.FirstName && c.LastName == content.LastName);
+            if (contactToEdit != null)
+            {
+                contactToEdit.FirstName = content.FirstName;
+                contactToEdit.LastName = content.LastName;
+                contactToEdit.Email = content.Email;
+                contactToEdit.PhoneNumber = content.PhoneNumber;
+                contactToEdit.PostalCode = content.PostalCode;
+                contactToEdit.City = content.City;
+                SaveToFile();
+            }
+        }
+
         public void RemoveFromList(Contact content) 
         {
             contacts.Remove(content);

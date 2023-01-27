@@ -36,8 +36,16 @@ namespace ContactBook.Pages
         {
 
 
-            //fileManagerService.AddToList(new Contact() {tb_FirstName });
-            //tb_FirstName = string.Empty;
+            fileManagerService.AddToList(new Contact() 
+            {
+                FirstName = tb_FirstName.Text,
+                LastName = tb_LastName.Text, 
+                Email = tb_Email.Text, 
+                PhoneNumber = tb_Phone.Text, 
+                PostalCode = tb_PostalCode.Text, 
+                City = tb_City.Text 
+            });
+            tb_FirstName.Text = string.Empty;
 
         }
     }

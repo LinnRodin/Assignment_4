@@ -17,19 +17,20 @@ using System.Windows.Shapes;
 
 namespace ContactBook.Pages
 {
-   
-    public partial class EditContact : Page
+    
+    public partial class MainPageContacts : Page
     {
         private readonly FileManagerService fileManagerService;
-        public EditContact()
+        public MainPageContacts()
         {
             InitializeComponent();
             fileManagerService = new FileManagerService();
         }
 
+       
+
         private void EditButton_Click(object sender, RoutedEventArgs e)
         {
-
             Contact contactToEdit = new Contact()
             {
                 FirstName = tb_FirstName.Text,
@@ -41,6 +42,21 @@ namespace ContactBook.Pages
             };
 
             fileManagerService.ContactToEdit(contactToEdit);
+            tb_FirstName.Text = string.Empty;
+
+        }
+
+        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        {
+            fileManagerService.RemoveFromList(new Contact()
+            { 
+              FirstName = tb_FirstName.Text, 
+              LastName = tb_LastName.Text, 
+              Email = tb_Email.Text, 
+              PhoneNumber = tb_Phone.Text, 
+              PostalCode = tb_PostalCode.Text, 
+              City = tb_City.Text 
+            });
             tb_FirstName.Text = string.Empty;
         }
     }
