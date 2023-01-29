@@ -16,7 +16,7 @@
         </Grid.RowDefinitions>
 
         <Grid Grid.Row="0">
-            <ListView x:Name="lv_Contacts" ItemsSource="{Binding Contacts}" Background="CadetBlue">
+            <ListView x:Name="lv_Contacts" ItemsSource="{Binding contacts}" Background="CadetBlue">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Firstname" DisplayMemberBinding="{Binding Firstname}" />
@@ -26,8 +26,8 @@
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                        <Button Height="30" Width="60" x:Name="btnEdit" Content="Edit" Background="CadetBlue" Foreground="white" Command="{Binding ElementName=lv_Contacts, Path=DataContext.EditCommand}" CommandParameter="{Binding}" />
-                                        <Button Height="30" Width="60" x:Name="btnRemove" Content="Remove" Background="CadetBlue" Foreground="white" Command="{Binding ElementName=lv_Contacts, Path=DataContext.RemoveCommand}" CommandParameter="{Binding}" />
+                                        <Button Height="30" Width="60" x:Name="btnEdit" Content="Edit" BorderBrush="Black" Background="CadetBlue" Foreground="white" Command="{Binding ElementName=lv_Contacts, Path=DataContext.EditCommand}" CommandParameter="{Binding}" />
+                                        <Button Height="30" Width="60" x:Name="btnRemove" Content="Remove" BorderBrush="Black" Background="CadetBlue" Foreground="white" Command="{Binding ElementName=lv_Contacts, Path=DataContext.RemoveCommand}" CommandParameter="{Binding}" />
                                     </StackPanel>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
@@ -54,7 +54,7 @@
             <TextBlock Grid.Row="1" Text="Lastname:" Margin="10 1 200 35" />
             <TextBox x:Name="tb_LastName" Grid.Row="1" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding SelectedItem.LastName, ElementName=lv_Contacts}"/>
             <TextBlock Grid.Row="2" Text="Phone:" Margin="10 1 200 35"/>
-            <TextBox x:Name="tb_Phone" Grid.Row="2" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding SelectedItem.Phone, ElementName=lv_Contacts}"/>
+            <TextBox x:Name="tb_Phone" Grid.Row="2" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding SelectedItem.PhoneNumber, ElementName=lv_Contacts}"/>
             <TextBlock Grid.Row="3" Text="Email:" Margin="10 1 200 35"/>
             <TextBox x:Name="tb_Email" Grid.Row="3" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding SelectedItem.Email, ElementName=lv_Contacts}"/>
             <TextBlock Grid.Row="4" Text="Streetname:" Margin="10 1 200 35" />

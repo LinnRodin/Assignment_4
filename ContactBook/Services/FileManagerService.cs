@@ -67,16 +67,22 @@ namespace ContactBook.Services
 
         public void RemoveFromList(Contact content) 
         {
-            var contactToRemove = contacts.FirstOrDefault(c => c.FirstName == content.FirstName && c.LastName == content.LastName);
-            if (contactToRemove != null)
-            {
-                contacts.Remove(contactToRemove);
-                SaveToFile();
-            }
-            else
-            {
-                MessageBox.Show("Contact was not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
-            }
+
+
+            contacts.Remove(content);
+            SaveToFile();
+
+
+            //var contactToRemove = contacts.FirstOrDefault(c => c.FirstName == content.FirstName && c.LastName == content.LastName);
+            //if (contactToRemove != null)
+            //{
+               // contacts.Remove(contactToRemove);
+                //SaveToFile();
+            //}
+            //else
+            //{
+                //MessageBox.Show("Contact was not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            //}
         }
 
 

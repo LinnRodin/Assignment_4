@@ -36,7 +36,7 @@ namespace ContactBook.Pages
 
        
 
-        private void EditButton_Click(object sender, RoutedEventArgs e)
+        public void EditButton_Click(object sender, RoutedEventArgs e)
         {
             var selectedContact = lv_Contacts.SelectedItem as Contact;
             if (selectedContact != null)
@@ -59,22 +59,25 @@ namespace ContactBook.Pages
 
         }
 
-        private void RemoveButton_Click(object sender, RoutedEventArgs e)
+        public void RemoveButton_Click(object sender, RoutedEventArgs e)
         {
             var selectedContact = lv_Contacts.SelectedItem as Contact;
             if (selectedContact != null)
             {
-                fileManagerService.RemoveFromList(selectedContact);
+                var result = MessageBox.Show("Are you sure you want to delete this contact?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    fileManagerService.RemoveFromList(selectedContact);
+                    lv_Contacts.Items.Refresh();
+                }
             }
-            tb_FirstName.Text = string.Empty;
-            tb_LastName.Text = string.Empty;
-            tb_Email.Text = string.Empty;
-            tb_Phone.Text = string.Empty;
-            tb_PostalCode.Text = string.Empty;
-            tb_City.Text = string.Empty;
+            else
+            {
+                MessageBox.Show("Please select a contact to delete.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
-        private void SaveButton_Click(object sender, RoutedEventArgs e)
+        public void SaveButton_Click(object sender, RoutedEventArgs e)
         {
             fileManagerService.SaveToFile();
             MessageBox.Show("Changes saved successfully!");
