@@ -42,6 +42,11 @@ namespace ContactBook.Pages
 
             fileManagerService.ContactToEdit(contactToEdit);
             tb_FirstName.Text = string.Empty;
+            tb_LastName.Text = string.Empty;
+            tb_Email.Text = string.Empty;
+            tb_Phone.Text = string.Empty;
+            tb_PostalCode.Text = string.Empty;
+            tb_City.Text = string.Empty;
         }
     }
 }

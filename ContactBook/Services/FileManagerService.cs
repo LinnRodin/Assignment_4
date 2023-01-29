@@ -7,6 +7,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 
 namespace ContactBook.Services
 {
@@ -58,12 +59,24 @@ namespace ContactBook.Services
                 contactToEdit.City = content.City;
                 SaveToFile();
             }
+            else
+            {
+                MessageBox.Show("Contact was not found!");
+            }
         }
 
         public void RemoveFromList(Contact content) 
         {
-            contacts.Remove(content);
-            SaveToFile();
+            var contactToRemove = contacts.FirstOrDefault(c => c.FirstName == content.FirstName && c.LastName == content.LastName);
+            if (contactToRemove != null)
+            {
+                contacts.Remove(contactToRemove);
+                SaveToFile();
+            }
+            else
+            {
+                MessageBox.Show("Contact was not found.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
 
 
