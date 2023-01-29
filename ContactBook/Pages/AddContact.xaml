@@ -8,7 +8,7 @@
       d:DesignHeight="550" d:DesignWidth="800"
       Title="AddContact">
 
-    <Grid Background="LightBlue">
+    <Grid Background="CadetBlue">
         <TextBlock Text="Add Contact" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="15 15 15 510"/>
         <Grid Grid.Column="1" Margin="50 50 50 50" Background="AliceBlue">
             <Grid.RowDefinitions>
@@ -36,7 +36,7 @@
             <TextBlock Grid.Row="6" Text="City:" Margin="10 1 200 35"/>
             <TextBox x:Name="tb_City" Grid.Row="6" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.City}"/>
             <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" >
-                <Button Height="30" Width="60" x:Name="AddButton" Content="Add" Foreground="Black" Click="AddButton_Click" />
+                <Button Height="30" Width="60" x:Name="AddButton" Content="Add" BorderBrush="Black" Background="CadetBlue" Foreground="white" Click="AddButton_Click" />
             </StackPanel>
         </Grid>
     </Grid>
