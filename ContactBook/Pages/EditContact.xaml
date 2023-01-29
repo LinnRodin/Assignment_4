@@ -9,7 +9,7 @@
       Title="EditContact">
 
     <Grid Background="AliceBlue" >
-        <TextBlock Text="Edit Contact" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="15"/>
+        <TextBlock Text="Edit Contact" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="15 15 15 500"/>
         <Grid Grid.Column="1" Margin="50 50 50 50">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
@@ -22,19 +22,19 @@
                 <RowDefinition Height="Auto" />
             </Grid.RowDefinitions>
             <TextBlock Grid.Row="0" Text="Firstname:" Margin="10 1 200 35"/>
-            <TextBox x:Name="tb_FirstName" Grid.Row="0" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" />
+            <TextBox x:Name="tb_FirstName" Grid.Row="0" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Firstname}"/>
             <TextBlock Grid.Row="1" Text="Lastname:" Margin="10 1 200 35" />
-            <TextBox x:Name="tb_LastName" Grid.Row="1" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" />
+            <TextBox x:Name="tb_LastName" Grid.Row="1" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Lastname}"/>
             <TextBlock Grid.Row="2" Text="Phone:" Margin="10 1 200 35"/>
-            <TextBox x:Name="tb_Phone" Grid.Row="2" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" />
+            <TextBox x:Name="tb_Phone" Grid.Row="2" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Phone}"/>
             <TextBlock Grid.Row="3" Text="Email:" Margin="10 1 200 35"/>
-            <TextBox x:Name="tb_Email" Grid.Row="3" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" />
+            <TextBox x:Name="tb_Email" Grid.Row="3" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Email}"/>
             <TextBlock Grid.Row="4" Text="Streetname:" Margin="10 1 200 35" />
-            <TextBox x:Name="tb_StreetName" Grid.Row="4" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" />
+            <TextBox x:Name="tb_StreetName" Grid.Row="4" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Streetname}"/>
             <TextBlock Grid.Row="5" Text="Postalcode:" Margin="10 1 200 35" />
-            <TextBox x:Name="tb_PostalCode" Grid.Row="5" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" />
+            <TextBox x:Name="tb_PostalCode" Grid.Row="5" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.Postalcode}"/>
             <TextBlock Grid.Row="6" Text="City:" Margin="10 1 200 35"/>
-            <TextBox x:Name="tb_City" Grid.Row="6" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke"/>
+            <TextBox x:Name="tb_City" Grid.Row="6" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding Contact.City}"/>
             <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" >
                 <Button Height="30" Width="60" x:Name="EditButton" Content="Save" Foreground="Black" Click="EditButton_Click"></Button>
             </StackPanel>

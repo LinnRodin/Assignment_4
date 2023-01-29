@@ -59,5 +59,10 @@ namespace ContactBook.Pages
             });
             tb_FirstName.Text = string.Empty;
         }
+
+        private void listbox_MainMenu_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
     }
 }
