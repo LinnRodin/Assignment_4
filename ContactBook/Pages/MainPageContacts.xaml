@@ -5,6 +5,7 @@
       xmlns:controls="clr-namespace:ContactBook.Controls"
       xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
       xmlns:local="clr-namespace:ContactBook.Pages"
+      xmlns:models="clr-namespace:ContactBook.Models"
       mc:Ignorable="d" 
       d:DesignHeight="550" d:DesignWidth="800"
       Title="MainPageContacts">
@@ -28,7 +29,7 @@
                         <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" />
                         <GridViewColumn>
                             <GridViewColumn.CellTemplate>
-                                <DataTemplate>
+                                <DataTemplate DataType="{x:Type models:Contact}">
                                     <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
                                         <Button Height="30" Width="60" x:Name="btnEdit" Content="Edit" Click="EditButton_Click" Margin="5 0 0 0" BorderBrush="Black" Background="CadetBlue" Foreground="white" Command="{Binding ElementName=lv_Contacts, Path=DataContext.EditCommand}" CommandParameter="{Binding}" />
                                         <Button Height="30" Width="60" x:Name="btnRemove" Content="Remove" Click="RemoveButton_Click" Margin="5 0 0 0" BorderBrush="Black" Background="CadetBlue" Foreground="white" Command="{Binding ElementName=lv_Contacts, Path=DataContext.RemoveCommand}" CommandParameter="{Binding}" />

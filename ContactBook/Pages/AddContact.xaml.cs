@@ -52,5 +52,7 @@ namespace ContactBook.Pages
                 tb_PostalCode.Text = string.Empty;
                 tb_City.Text = string.Empty;
         }
+
+        
     }
 }

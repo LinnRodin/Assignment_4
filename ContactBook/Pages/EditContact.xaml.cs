@@ -48,5 +48,11 @@ namespace ContactBook.Pages
             tb_PostalCode.Text = string.Empty;
             tb_City.Text = string.Empty;
         }
+
+        private void CancelButton_Click(object sender, RoutedEventArgs e)
+        {
+            NavigationService.GetNavigationService(ContentFrame).GoBack();
+        }
     }
+    
 }
