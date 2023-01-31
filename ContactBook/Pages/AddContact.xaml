@@ -9,8 +9,17 @@
       Title="AddContact">
 
     <Grid Background="CadetBlue">
-        <TextBlock Text="Add Contact" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="15 15 15 510"/>
-        <Grid Grid.Column="1" Margin="150 50 150 50" Background="AliceBlue">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Image Grid.Column="0" Width="200" Height="200" VerticalAlignment="Top" Margin="45 45 0 0">
+            <Image.Source>
+                <BitmapImage UriSource="https://images.pexels.com/photos/3193846/pexels-photo-3193846.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=700"/>
+            </Image.Source>
+        </Image>
+        <TextBlock Grid.Column="1" Text="Add Contact" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="15 10 90 500"/>
+        <Grid Grid.Column="1" Margin="70 50 150 50" Background="AliceBlue">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
