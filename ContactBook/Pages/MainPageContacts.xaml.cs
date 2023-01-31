@@ -41,21 +41,31 @@ namespace ContactBook.Pages
             var selectedContact = lv_Contacts.SelectedItem as Contact;
             if (selectedContact != null)
             {
-                selectedContact.FirstName = tb_FirstName.Text;
-                selectedContact.LastName = tb_LastName.Text;
-                selectedContact.Email = tb_Email.Text;
-                selectedContact.PhoneNumber = tb_Phone.Text;
-                selectedContact.PostalCode = tb_PostalCode.Text;
-                selectedContact.City = tb_City.Text;
-                fileManagerService.SaveToFile();
-            }
+                var result = MessageBox.Show("Are you sure you want to make changes to this contact?", "Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+                if (result == MessageBoxResult.Yes)
+                {
+                    selectedContact.FirstName = tb_FirstName.Text;
+                    selectedContact.LastName = tb_LastName.Text;
+                    selectedContact.Email = tb_Email.Text;
+                    selectedContact.PhoneNumber = tb_Phone.Text;
+                    selectedContact.PostalCode = tb_PostalCode.Text;
+                    selectedContact.City = tb_City.Text;
+                    fileManagerService.SaveToFile();
 
-            tb_FirstName.Text = string.Empty;
-            tb_LastName.Text = string.Empty;
-            tb_Email.Text = string.Empty;
-            tb_Phone.Text = string.Empty;
-            tb_PostalCode.Text = string.Empty;
-            tb_City.Text = string.Empty;
+                    tb_FirstName.Text = string.Empty;
+                    tb_LastName.Text = string.Empty;
+                    tb_Email.Text = string.Empty;
+                    tb_Phone.Text = string.Empty;
+                    tb_PostalCode.Text = string.Empty;
+                    tb_City.Text = string.Empty;
+
+                    MessageBox.Show("Changes saved successfully!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Please select a contact to edit.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
 
         }
 
@@ -79,8 +89,12 @@ namespace ContactBook.Pages
 
         public void SaveButton_Click(object sender, RoutedEventArgs e)
         {
-            fileManagerService.SaveToFile();
-            MessageBox.Show("Changes saved successfully!");
+            var result = MessageBox.Show("Do you want to save the changes?", "Confirm", MessageBoxButton.YesNo);
+            if (result == MessageBoxResult.Yes)
+            {
+                fileManagerService.SaveToFile();
+                MessageBox.Show("Changes saved successfully!");
+            }
         }
     }
 }

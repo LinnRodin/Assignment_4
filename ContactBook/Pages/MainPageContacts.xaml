@@ -7,21 +7,21 @@
       xmlns:local="clr-namespace:ContactBook.Pages"
       xmlns:models="clr-namespace:ContactBook.Models"
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="800"
+      d:DesignHeight="550" d:DesignWidth="870"
       Title="MainPageContacts">
 
-    <Grid Background="AliceBlue">
+    <Grid Background="CadetBlue">
         <Grid.RowDefinitions>
             <RowDefinition Height="Auto" />
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
 
-        <Grid Grid.Row="0" Margin="0 5 0 5">
+        <Grid Grid.Row="0" Margin="15 10 0 5">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition/>
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
-            <ListView x:Name="lv_Contacts" ItemsSource="{Binding contacts}" Background="CadetBlue" HorizontalAlignment="Stretch">
+            <ListView x:Name="lv_Contacts" ItemsSource="{Binding contacts}" Background="CadetBlue" BorderThickness="2" BorderBrush="White" HorizontalAlignment="Stretch">
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Firstname" DisplayMemberBinding="{Binding FirstName}" />
@@ -42,7 +42,7 @@
             </ListView>
         </Grid>
 
-        <Grid Grid.Column="1" Background="AliceBlue" Margin="50 50 50 50" Width="300" HorizontalAlignment="Right">
+        <Grid Grid.Column="1" Background="AliceBlue" Margin="50 20 50 20" Width="300" HorizontalAlignment="Right">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
                 <RowDefinition Height="Auto" />
@@ -69,7 +69,7 @@
             <TextBlock Grid.Row="6" Text="City:" Margin="10 1 200 35"/>
             <TextBox x:Name="tb_City" Grid.Row="6" Grid.Column="1" Margin="10,20,10,10" Background="WhiteSmoke" Text="{Binding SelectedItem.City, ElementName=lv_Contacts}"/>
             <StackPanel Grid.Row="7" Orientation="Horizontal" HorizontalAlignment="Center" >
-                <Button Height="30" Width="60" x:Name="SaveButton" BorderBrush="Black" Margin="5 5 5 7" Content="Save" Background="CadetBlue" Foreground="white" Click="SaveButton_Click" ></Button>
+                <Button Height="30" Width="60" x:Name="SaveButton" BorderBrush="Black" Margin="5 5 5 25" Content="Save" Background="CadetBlue" Foreground="white" Click="SaveButton_Click" ></Button>
             </StackPanel>
         </Grid>
     </Grid>
