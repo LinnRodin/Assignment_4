@@ -7,7 +7,7 @@
       xmlns:local="clr-namespace:ContactBook.Pages"
       xmlns:models="clr-namespace:ContactBook.Models"
       mc:Ignorable="d" 
-      d:DesignHeight="550" d:DesignWidth="870"
+      d:DesignHeight="550" d:DesignWidth="860"
       Title="MainPageContacts">
 
     <Grid Background="CadetBlue">

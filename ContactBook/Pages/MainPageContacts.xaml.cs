@@ -52,13 +52,6 @@ namespace ContactBook.Pages
                     selectedContact.City = tb_City.Text;
                     fileManagerService.SaveToFile();
 
-                    tb_FirstName.Text = string.Empty;
-                    tb_LastName.Text = string.Empty;
-                    tb_Email.Text = string.Empty;
-                    tb_Phone.Text = string.Empty;
-                    tb_PostalCode.Text = string.Empty;
-                    tb_City.Text = string.Empty;
-
                     MessageBox.Show("Changes saved successfully!", "Information", MessageBoxButton.OK, MessageBoxImage.Information);
                 }
             }
