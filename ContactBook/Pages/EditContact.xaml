@@ -10,7 +10,7 @@
 
     <Grid Background="CadetBlue">
         <TextBlock Text="Edit Contact" FontSize="14" FontWeight="Bold" HorizontalAlignment="Center" Margin="15 15 15 500"/>
-        <Frame x:Name="ContentFrame" />
+      
         <Grid Grid.Column="1" Margin="100 50 100 50" Background="AliceBlue">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto" />
