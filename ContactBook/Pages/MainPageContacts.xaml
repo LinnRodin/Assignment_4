@@ -24,8 +24,8 @@
             <ListView x:Name="lv_Contacts" ItemsSource="{Binding contacts}" Background="CadetBlue" HorizontalAlignment="Stretch">
                 <ListView.View>
                     <GridView>
-                        <GridViewColumn Header="Firstname" DisplayMemberBinding="{Binding Firstname}" />
-                        <GridViewColumn Header="Lastname" DisplayMemberBinding="{Binding Lastname}" />
+                        <GridViewColumn Header="Firstname" DisplayMemberBinding="{Binding FirstName}" />
+                        <GridViewColumn Header="Lastname" DisplayMemberBinding="{Binding LastName}" />
                         <GridViewColumn Header="Email" DisplayMemberBinding="{Binding Email}" />
                         <GridViewColumn>
                             <GridViewColumn.CellTemplate>
