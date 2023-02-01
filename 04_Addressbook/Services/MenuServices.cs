@@ -8,9 +8,9 @@ using System.Linq;
 namespace _04_Addressbook.Services;
 
 
-internal class MenuServices
+public class MenuServices
 {
-    private List<Contact> registry = new List<Contact>();  //privata listor
+    public List<Contact> registry = new List<Contact>();  //privata listor
 
     private FileService file = new FileService();
     public string FilePath { get; set; } = null!;
