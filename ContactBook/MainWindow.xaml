@@ -6,7 +6,10 @@
         xmlns:controls="clr-namespace:ContactBook.Controls"
         xmlns:local="clr-namespace:ContactBook"
         mc:Ignorable="d"
-        Title="ContactBook" Height="550" Width="860">
+        SizeToContent="WidthAndHeight"
+        MinHeight="550"
+        MinWidth="870"
+        Title="ContactBook" Height="550" Width="870">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="auto" />
